@@ -7,7 +7,7 @@
         class="cursor-pointer hover:shadow-lg transition duration-100 ease-in"
         v-for="(preset, index) in presets"
         :key="index"
-        @click="copypreset(preset)"
+        @click="(preset)"
       >
         <div
           class="preset relative flex justify-center items-center h-48 rounded"
@@ -54,7 +54,7 @@ export default {
     this.presets = presets;
   },
   methods: {
-    copypreset(preset) {
+    copyPreset(preset) {
       copyToClipboard(preset, () => {
         this.copied = preset;
         setTimeout(() => (this.copied = null), 1500);
